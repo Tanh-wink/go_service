@@ -5,15 +5,22 @@
 ```
 .
 ├── config
-│   ├── external
+│   ├── config.go
+│   └── config.toml
 ├── logs
-├── models
 ├── models
 ├── utils
 ├── web
 │   ├── controller
+│       └── demo.go
 │   ├── middleware
+│       ├── exceptionHandler.go
+│       └── timeHandler.go
 │   ├── routers
+│       └── router.go
+│   └── template
+│       └── static
+│           └── home.html
 ├── go.mod
 ├── go.sum
 ├── main.go
