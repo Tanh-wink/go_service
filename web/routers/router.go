@@ -9,9 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func RegisterRoutes() *gin.Engine{
-	// 初始化路由
-	router := initRouter()
+func registerRoutes(router *gin.Engine) *gin.Engine{
 
 	v1 := router.Group("/v1")
 	{
@@ -21,7 +19,8 @@ func RegisterRoutes() *gin.Engine{
 			// user,err := db.xxx
 			// if err != nil {
 			// 	panic(utils.ServerError{Msg:"账号或密码错误"})
-			// }			
+			// }
+
 			ctx.JSON(200, gin.H{"msg": "服务启动成功"})
 		})
 		//接收数据
@@ -32,6 +31,9 @@ func RegisterRoutes() *gin.Engine{
 
 		//接收json数据
 		v1.POST("/api/getjson", func(ctx *gin.Context) {
+			for i := 0; i < 10000000; i++ {
+				
+			}
 			data, _ := ctx.GetRawData()
 			var dict map[string]interface{}
 			_ = json.Unmarshal(data, &dict)
@@ -42,7 +44,7 @@ func RegisterRoutes() *gin.Engine{
 }
 
 // 初始化路由
-func initRouter() *gin.Engine{
+func InitRouter() *gin.Engine{
 	router := gin.New()
 	//add middleware
 	router.Use(middleware.HttpTimeHandler, middleware.ExceptionHandler)
@@ -57,6 +59,7 @@ func initRouter() *gin.Engine{
 			"msg": "This is a go web project",
 		})
 	})
-
+	// register routes
+	router = registerRoutes(router)
 	return router
 }

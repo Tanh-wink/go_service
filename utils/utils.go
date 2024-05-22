@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	logger = GetLogger("utils")
+	logger = GetLogger("Package-utils")
 	ProjectPath = getProjectPath()
 )
 
@@ -18,4 +18,14 @@ func getProjectPath() string{
     }
     logger.Info("Project path:", projectPath)
 	return projectPath
+}
+
+// 检查切片slice是否包含目标字符串target。如果包含则返回 true，否则返回 false
+func ContainsString(slice []string, target string) bool {
+    for _, v := range slice {
+        if v == target {
+            return true
+        }
+    }
+    return false
 }

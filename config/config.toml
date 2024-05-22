@@ -1,13 +1,18 @@
 # 应用配置，启动加载此配置
 # 命名规则：首字母必须大写
-#### 基本配置 ####
-AppName = "ai"
-
 #### web配置 ####
+AppName = "ai"
 Port = 8080
+Env = "pre"
+TimeoutThreshold = 1   # 超时告警时间，单位:ms
 
 #### 日志配置 ####
 LogFile = "./logs/ai.log"
+
+#### 告警配置 ####
+BotWarningEnv = "prod/pre"
+RobotURL = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=94bc19bf-30d7-4fbc-a51d-815c3b8e7afe"
+MentionWhoList = ["15626237471"]
 
 #### database配置 ####
 

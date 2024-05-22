@@ -13,7 +13,7 @@ var(
 )
 
 func main(){
-	server := routers.RegisterRoutes()
+	server := routers.InitRouter()
 	// fmt.Println("Service starting")
 	err := server.Run(fmt.Sprintf(":%d", conf.Port))
 	if err != nil {

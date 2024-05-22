@@ -9,14 +9,19 @@ import (
  
 type Config struct {
 	//变量名和顺序 必须与 config.toml文件一致
-	// 基本配置
-	AppName string
-
 	// web配置
+	AppName	string
 	Port int
+	Env string
+	TimeoutThreshold int     // 超时告警时间，单位:ms
 
 	// 日志配置
 	LogFile string
+
+	// 告警配置
+	BotWarningEnv	string
+	RobotURL       string
+	MentionWhoList []string
 }
 
 var config = InitConfig()

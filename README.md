@@ -1,5 +1,6 @@
 # go web项目
 
+
 ## 目录结构
 
 ```
@@ -10,6 +11,11 @@
 ├── logs
 ├── models
 ├── utils
+│   ├── env.go
+│   ├── exceptions.go
+│   ├── logger.go
+│   ├── timeutil.go
+│   └── utils.go
 ├── web
 │   ├── controller
 │       └── demo.go
