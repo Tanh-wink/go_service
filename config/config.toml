@@ -15,6 +15,9 @@ RobotURL = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxx"
 MentionWhoList = ["156xxxxxxx1"]
 
 #### database配置 ####
+Uri = "mongodb://seaxxxxx:71xxxxxEVqir3@10.xx.xx.xx:2xxx7,xx.xx.64.xx:2xxxx,xx.x8.x4.xx:2xxxx/xxxk?authSource=xxxx"
+Database = "xxxx"
+Table = ""
 
 #### 业务配置 ####
 
