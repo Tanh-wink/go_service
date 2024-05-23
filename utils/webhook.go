@@ -73,7 +73,7 @@ func (w *WeComBot) SendMarkdown(md string) error {
 	return w.sendRequest(data)
 }
 
-// func main() {
+
 	
 
 // 	err := bot.SendText("This is a text message")
@@ -87,4 +87,3 @@ func (w *WeComBot) SendMarkdown(md string) error {
 // 		fmt.Println("Error sending markdown message:", err)
 // 		os.Exit(1)
 // 	}
-// }

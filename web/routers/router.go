@@ -7,13 +7,17 @@ import (
 	"go/sevice/web/middleware"
 	"net/http"
 	"github.com/gin-gonic/gin"
+	"go/sevice/dto"
+)
+var (
+	logger = utils.GetLogger("Package-router")
 )
 
 func registerRoutes(router *gin.Engine) *gin.Engine{
 
 	v1 := router.Group("/v1")
 	{
-		v1.GET("/smartPush20/product/v1/getProductRecDetail", controller.GetProductRecordDetailSC20)
+		v1.POST("/smartPush20/product/v1/getProductRecDetail", controller.GetProductRecordDetailSC20)
 		v1.GET("/info", func(ctx *gin.Context) {
 			// 异常处理
 			// user,err := db.xxx
@@ -31,14 +35,27 @@ func registerRoutes(router *gin.Engine) *gin.Engine{
 
 		//接收json数据
 		v1.POST("/api/getjson", func(ctx *gin.Context) {
-			for i := 0; i < 10000000; i++ {
-				
-			}
 			data, _ := ctx.GetRawData()
 			var dict map[string]interface{}
 			_ = json.Unmarshal(data, &dict)
-			ctx.JSON(200, dict)
+			ctx.JSON(http.StatusOK, dict)
 		})
+
+		//参数验证
+		// v1.POST("/api/valid", func(ctx *gin.Context) {
+		// 	// data, _ := ctx.GetRawData()
+		// 	var request config.ProductRecRequest
+		// 	err := ctx.ShouldBindJSON(&request)
+		// 	if err != nil {
+		// 		logger.Error("register failed")
+		// 		ctx.JSON(http.StatusOK, gin.H{"msg": err.Error()})
+		// 		return
+		// 	}
+		// 	// var dict map[string]interface{}
+		// 	// _ = json.Unmarshal(request, &dict)
+
+		// 	ctx.JSON(http.StatusOK, "successful")
+		// })
 	}
 	return router
 }
@@ -59,6 +76,7 @@ func InitRouter() *gin.Engine{
 			"msg": "This is a go web project",
 		})
 	})
+	dto.RegisterValidator()
 	// register routes
 	router = registerRoutes(router)
 	return router

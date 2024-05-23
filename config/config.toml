@@ -4,15 +4,15 @@
 AppName = "ai"
 Port = 8080
 Env = "pre"
-TimeoutThreshold = 1   # 超时告警时间，单位:ms
+TimeoutThreshold = 1000   # 超时告警时间，单位:ms
 
 #### 日志配置 ####
 LogFile = "./logs/ai.log"
 
 #### 告警配置 ####
 BotWarningEnv = "prod/pre"
-RobotURL = "https://qyapi.weixin.qq.com/xxx-bin/webhook/send?key=xxxx"
-MentionWhoList = ["15xxxxxxxx"]
+RobotURL = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxx"
+MentionWhoList = ["156xxxxxxx1"]
 
 #### database配置 ####
 
