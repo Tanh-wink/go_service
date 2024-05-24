@@ -10,7 +10,7 @@ import (
 	"go/sevice/dto"
 )
 var (
-	logger = utils.GetLogger("Package-router")
+	// logger = utils.GetLogger("Package-router")
 )
 
 func registerRoutes(router *gin.Engine) *gin.Engine{
@@ -39,22 +39,6 @@ func registerRoutes(router *gin.Engine) *gin.Engine{
 			_ = json.Unmarshal(data, &dict)
 			ctx.JSON(http.StatusOK, dict)
 		})
-
-		//参数验证
-		// v1.POST("/api/valid", func(ctx *gin.Context) {
-		// 	// data, _ := ctx.GetRawData()
-		// 	var request config.ProductRecRequest
-		// 	err := ctx.ShouldBindJSON(&request)
-		// 	if err != nil {
-		// 		logger.Error("register failed")
-		// 		ctx.JSON(http.StatusOK, gin.H{"msg": err.Error()})
-		// 		return
-		// 	}
-		// 	// var dict map[string]interface{}
-		// 	// _ = json.Unmarshal(request, &dict)
-
-		// 	ctx.JSON(http.StatusOK, "successful")
-		// })
 	}
 	return router
 }
@@ -75,6 +59,7 @@ func InitRouter() *gin.Engine{
 			"msg": "This is a go web project",
 		})
 	})
+	// 注册请求参数验证器
 	dto.RegisterValidator()
 	// register routes
 	router = registerRoutes(router)
