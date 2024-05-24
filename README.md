@@ -18,7 +18,6 @@
 ├── models
 ├── utils
 │   ├── env.go
-│   ├── exceptions.go
 │   ├── logger.go
 │   ├── timeutil.go
 │   ├── utils.go

@@ -17,7 +17,7 @@ type Response struct {
 func NewResponse(code int, msg string, data interface{}) Response {
 	return Response{
 		Code: code,
-        Msg:  msg,
-        Data: data,
+		Msg:  msg,
+		Data: data,
 	}
 }

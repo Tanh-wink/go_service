@@ -7,6 +7,7 @@ import (
 	"go/sevice/dto"
 	"go/sevice/utils"
 	"net/http"
+	"go/sevice/web/middleware"
 )
 
 var (
@@ -21,7 +22,7 @@ func GetProductRecordDetailSC20(ctx *gin.Context) {
 	err := ctx.ShouldBindJSON(&request)
 	if err != nil {
 		logger.Error(err.Error())
-		panic(utils.ParamError{Msg: err.Error()})
+		panic(middleware.ParamError{Msg: err.Error()})
 	}
 	
 	// 业务逻辑代码
