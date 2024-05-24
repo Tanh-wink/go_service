@@ -37,12 +37,12 @@ const (
 )
 
 var _SERVER_ENV_MAPPING = map[HostEnv]string{
-	DEVELOP:     "deve",
+	DEVELOP:     "dev",
 	TEST:        "test",
 	SANDBOX:     "sandbox",
 	INTEGRATION: "integrate",
 	PRESSURE:    "press",
-	PREVIEW:     "prev",
+	PREVIEW:     "pre",
 	PRODUCT:     "prod",
 }
 
