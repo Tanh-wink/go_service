@@ -24,9 +24,7 @@ func registerRoutes(router *gin.Engine) *gin.Engine{
 			// if err != nil {
 			// 	panic(utils.ServerError{Msg:"账号或密码错误"})
 			// }
-			b := 0
-			a := 4/b
-			ctx.JSON(200, gin.H{"msg": a})
+			ctx.JSON(200, gin.H{"msg": "服务启动成功"})
 		})
 		//接收数据
 		v1.POST("/api/get", func(ctx *gin.Context) {
