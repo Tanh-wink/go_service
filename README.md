@@ -2,7 +2,7 @@
 
 基于Gin框架的web服务
 
-已实现：日志采集logger，异常处理，统计耗时，企业微信告警，参数验证
+已实现：日志采集logger，异常处理，统计耗时，企业微信告警，请求参数验证
 
 ## 目录结构
 
@@ -19,7 +19,6 @@
 ├── utils
 │   ├── env.go
 │   ├── logger.go
-│   ├── timeutil.go
 │   ├── utils.go
 │   └── webhook.go
 ├── web
